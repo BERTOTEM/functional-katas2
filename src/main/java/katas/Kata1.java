@@ -20,7 +20,7 @@ public class Kata1 {
 
         List<Map> resultMovies = movies.stream().map(movie -> ImmutableMap.of("id", movie.getId(), "title", movie.getTitle()))
                 .collect(Collectors.toList());
-
+    System.out.println(resultMovies);
         return resultMovies;
     }
 }
