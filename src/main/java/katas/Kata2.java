@@ -16,7 +16,10 @@ import java.util.Map;
 public class Kata2 {
     public static List<Integer> execute() {
         List<Movie> movies = DataUtil.getMovies();
-
-        return ImmutableList.of(1, 2, 3);
+        List<Integer> bestmovies = movies
+                .stream()
+                .filter(movie -> movie.getRating().equals(5.0))
+                .map(Movie::getId).collect(Collectors.toList());
+        return bestmovies;
     }
 }

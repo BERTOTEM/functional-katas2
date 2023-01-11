@@ -80,4 +80,17 @@ public class Movie {
     public void setInterestingMoments(List<InterestingMoment> interestingMoments) {
         this.interestingMoments = interestingMoments;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", boxarts=" + boxarts +
+                ", uri='" + uri + '\'' +
+                ", rating=" + rating +
+                ", bookmark=" + bookmark +
+                ", interestingMoments=" + interestingMoments +
+                '}';
+    }
 }
