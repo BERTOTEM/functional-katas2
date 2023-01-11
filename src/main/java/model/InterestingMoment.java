@@ -31,4 +31,12 @@ public class InterestingMoment {
     public void setTime(Date time) {
         this.time = time;
     }
+
+    @Override
+    public String toString() {
+        return "InterestingMoment{" +
+                "type='" + type + '\'' +
+                ", time=" + time +
+                '}';
+    }
 }
