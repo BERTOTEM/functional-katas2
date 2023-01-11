@@ -29,4 +29,12 @@ public class MovieList {
     public void setVideos(List<Movie> videos) {
         this.videos = videos;
     }
+
+    @Override
+    public String toString() {
+        return "MovieList{" +
+                "name='" + name + '\'' +
+                ", videos=" + videos +
+                '}';
+    }
 }
