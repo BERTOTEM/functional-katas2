@@ -1,5 +1,6 @@
 package katas;
 
+import model.BoxArt;
 import model.Movie;
 import util.DataUtil;
 
@@ -12,8 +13,14 @@ import java.util.List;
 */
 public class Kata6 {
     public static String execute() {
-        List<Movie> movies = DataUtil.getMovies();
-
-        return "someUrl";
+        List<MovieList> movies = DataUtil.getMovieLists();
+        String largestboxart = movies
+                .stream().flatMap(x ->x.getVideos().stream())
+                .flatMap(z ->z.getBoxarts().stream())
+                .reduce((box1, box2) -> box1.getWidth() > box2.getWidth() ? box1 : box2)
+                .map(BoxArt::getUrl)
+                .orElse("");
+        System.out.println(largestboxart);
+        return largestboxart;
     }
 }
