@@ -7,6 +7,7 @@ import util.DataUtil;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /*
     Goal: Chain filter() and map() to collect the ids of videos that have a rating of 5.0
