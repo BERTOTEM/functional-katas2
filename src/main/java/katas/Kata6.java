@@ -2,6 +2,7 @@ package katas;
 
 import model.BoxArt;
 import model.Movie;
+import model.MovieList;
 import util.DataUtil;
 
 import java.util.List;
