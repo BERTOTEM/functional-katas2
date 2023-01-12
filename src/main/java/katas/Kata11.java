@@ -2,10 +2,12 @@ package katas;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import model.BoxArt;
 import util.DataUtil;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /*
     Goal: Create a datastructure from the given data:
@@ -63,8 +65,28 @@ public class Kata11 {
         List<Map> boxArts = DataUtil.getBoxArts();
         List<Map> bookmarkList = DataUtil.getBookmarkList();
 
-        return ImmutableList.of(ImmutableMap.of("name", "someName", "videos", ImmutableList.of(
-                ImmutableMap.of("id", 5, "title", "The Chamber", "time", 123, "boxart", "someUrl")
-        )));
+        List<Map> datastructure = lists
+                .stream()
+                .map(genero -> ImmutableMap
+                        .of("name",genero.get("name"), "videos", videos
+                                .stream()
+                                .filter(video -> video.get("listId").equals(genero.get("id")))
+                                .map(video -> ImmutableList.of(ImmutableMap.of("id", video.get("id"), "title", video.get("title"), "time",
+                                        bookmarkList.stream()
+                                        .filter(book -> book.get("videoId").equals(video.get("id")))
+                                        .map(book -> book.get("time"))
+                                                .collect(Collectors.toList()).get(0), "boxart",
+                                        boxArts
+                                        .stream()
+                                        .filter(portada ->portada.get("videoId").equals(video.get("id")))
+                                        .map(portada -> portada.get("url"))
+                                                .collect(Collectors.toList()))))
+                                .collect(Collectors.toList())))
+                .collect(Collectors.toList());
+
+
+
+        System.out.println(datastructure);
+        return datastructure;
     }
 }
