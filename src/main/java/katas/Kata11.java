@@ -3,6 +3,7 @@ package katas;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import model.BoxArt;
+import org.hamcrest.core.AnyOf;
 import util.DataUtil;
 
 import java.util.List;
@@ -79,8 +80,9 @@ public class Kata11 {
                                         boxArts
                                         .stream()
                                         .filter(portada ->portada.get("videoId").equals(video.get("id")))
-                                        .map(portada -> portada.get("url"))
-                                                .collect(Collectors.toList()))))
+                                                .reduce((box1, box2) -> (Integer) box1.get("width") < (Integer) box2.get("width") ? box1 : box2)
+                                                .map(portada -> portada.get("url"))
+                                                .orElse(""))))
                                 .collect(Collectors.toList())))
                 .collect(Collectors.toList());
 
