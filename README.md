@@ -18,3 +18,19 @@ Katas
 * Kata 9: Complex Query
 * Kata 10: Transforming a data structure
 * Kata 11: Transforming a more complex data structure
+
+### Technologies :wrench:
+
+*	Reactive programing (RxJava)
+
+![](https://www.couchbase.com/blog/wp-content/uploads/2018/12/ReactiveX_Logo.png)
+
+* Intellij Idea
+
+![](https://dashboard.snapcraft.io/site_media/appmedia/2017/10/logo_zjwX5FR.png)
+
+### Autor
+[@Nirsch95](https://github.com/Nirsch95) - Andrés Castro :wolf:
+[@BERTOTEM](https://github.com/BERTOTEM) - Julian Mazo
+
+Everything is solved in the develop branch, new things were learned.
