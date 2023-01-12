@@ -84,8 +84,6 @@ public class Kata11 {
                                 .collect(Collectors.toList())))
                 .collect(Collectors.toList());
 
-
-
         System.out.println(datastructure);
         return datastructure;
     }
